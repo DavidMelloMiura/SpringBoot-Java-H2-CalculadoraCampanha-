@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; color: #585858; font-smooth: always; font-weight: 300; }
+a { text-decoration: none; }
+
+h1 { display:flex; justify-content: center; font-size: 1rem; background-color: #1171b1; margin-top: 0px; padding: 0.5rem 0.5rem ; color: whitesmoke;}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 89vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 100%;
+}
+
+
+.imagem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 47vw;
+}
+
+@keyframes socialmedia {
+	0% 		{ margin-top: -50px; }
+	50% 	{ margin-top: 0px; }
+	100% 	{ margin-top: -50px; }
+}
+
+#imgmobile {
+	display: flex;
+	width: 33vw;
+	z-index: -10;
+	
+/* Animação - Configurações  */
+
+	animation-name: socialmedia;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-delay: -2s;
+	animation-timing-function: ease;
+}
+
+
+input {
+	display: flex;
+    width: 20rem;
+    height: 2.3rem;
+    margin-bottom: 0.5em;
+    margin-top: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #b8b8b8;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #777;
+}
+
+input:hover {
+    outline: 1.5px solid #1171b1;
+    background-color: #ddedfa;
+    height: 2.3rem;
+    margin-bottom: 0.5em;
+    margin-top: 0.5rem;
+}
+
+input[type="date"] {
+	color: #777;
+}
+
+#btCalcular {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.9rem;
+    width: 20.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    background-color: #1171b1;
+    border: 1px solid #b1b1b1;
+    border-radius: 3px;
+    color: white;
+}
+
+#btCalcular:hover {
+    background-color: #3290cf;
+    border: 1px solid #1171b1;
+    color: white;
+    
+}
+
+#btCampanhas {
+    height: 2.3rem;
+    width: 13rem;	
+    background-color: #DFC013;
+    border: 1px solid #b1b1b1;
+    border-radius: 3px;
+}
+
+#btCampanhas:hover {	
+    background-color: #eed340;
+    border: 1px solid #DFC013;
+    outline: 1px solid #b89e10;
+}
+
+
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 800px) {
+	
+	main {
+		height: 100vh;
+	}
+	
+	.form {
+		width: 100vw;
+		height: 60vh;
+		padding-bottom: 1rem;
+	}
+	
+	.imagem {
+		width: 100vw;
+		height: 50vh;
+		
+		border: 1px solid blue;
+	}
+	
+	#imgmobile {
+		width: 57%;
+	}
+}

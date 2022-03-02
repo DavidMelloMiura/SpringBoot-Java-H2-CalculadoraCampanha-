@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanhas</title>
+    
+    <link rel="stylesheet" type="text/css" href="estiloCampanha.css">
+</head>
+<body>
+
+    <h1>Lista de Campanhas</h1>
+ 
+    <table th:each="campanha: ${campanhas}">
+  <tr>
+    <th class="thRel">Código</th>
+    <td th:text="${campanha.id}">-</td>
+    <th>-</th>
+    <td class="thRes" rowspan="2">$</td>
+    <td rowspan="2">100</td>
+  </tr>
+  <tr>
+    <th class="thRel">Anuncio</th>
+    <td class="tg-0pky">face</td>
+    <td class="tg-0lax"></td>
+  </tr>
+
+
+  <tr>
+    <th class="thRel">Cliente</th>
+    <td class="tg-0pky">David</td>
+    <td class="tg-0lax"></td>
+    <td class="thRes" rowspan="2">eye</td>
+    <td class="tg-0pky" rowspan="2">5000</td>
+  </tr>
+  <tr>
+    <th class="thRel">Início</th>
+    <td class="tg-0pky">dtini</td>
+    <td class="tg-0lax">-</td>
+  </tr>
+  <tr>
+    <th class="thRel">Fim</th>
+    <td>dtfim</td>
+    <td>-</td>
+    <td class="thRes"  rowspan="2">alvo</td>
+    <td class="tg-0pky" rowspan="2">800</td>
+  </tr>
+  <tr>
+    <th class="thRel">Dias</th>
+    <td>qt d</td>
+    <td class="tg-0lax">-</td>
+  </tr>
+  <tr>
+    <th class="thRel">Valor Diário</th>
+    <td>vlr</td>
+    <td class="tg-0lax">-</td>
+    <td class="thRes"  rowspan="2">share</td>
+    <td class="tg-0pky" rowspan="2">3</td>
+  </tr>
+  <tr>
+    <th class="thRel">Valor Total</th>
+    <td class="tg-0lax">vlT</td>
+    <td class="tg-0lax">-</td>
+  </tr>
+ 
+</table>
+    
+
+
+
+    
+
+ 
+ <main class="maincampanha">
+ 	<section class="relatorio">
+    
+	    <table th:each="campanha: ${campanhas}">
+	    	<tr>
+	    		<th class="thRel">Código</th><td th:text="${campanha.id}">Código</td>
+	    	</tr>
+	    	<tr>
+	    		<th class="thRel">Anuncio</th><td th:text="${campanha.anuncio}">Face ads</td>
+	    	</tr>
+	    	<tr>
+	    		<th class="thRel">Cliente</th><td th:text="${campanha.nome}">-</td>
+	    	</tr>
+	    	<tr>
+	    		<th class="thRel">Inicio</th><td th:text="${campanha.dataini}">-</td>
+	    	</tr>
+	    	<tr>
+	    		<th class="thRel">Fim</th><td th:text="${campanha.datafim}">-</td>
+	    	</tr>
+	    	<tr>
+	    		<th class="thRel">Dias</th><td th:text="${campanha.CalcDias}">-</td>
+	    	</tr>
+	    	<tr>
+	    		<th class="thRel">Valor Diário</th><td th:text="${campanha.investimento}">-</td>
+	    	</tr>
+	    	<tr>
+	    		<th class="thRel">Valor Total</th><td th:text="${campanha.ValorTotal}">-</td>
+	    	</tr> 
+	    </table>
+	 </section>    
+    
+ <section class="resultados">
+ 	 	
+ 		<table th:each="campanha: ${campanhas}">
+ 			<tr>
+ 				<th class="thRes"><img src="/img/cifrao.png"></th>
+ 				<td th:text="${campanha.ValorTotal}">Valor Total</td>
+ 			</tr>
+ 			<tr>
+	 			<th class="thRes"><img src="/img/visualizacao.png"></th>
+	 			<td th:text="${campanha.Calcviewstotal}">Visualizações</td>
+ 			</tr>
+ 			<tr>
+	 			<th class="thRes"><img src="/img/clique.png"></th>
+	 			<td th:text="${campanha.CalcClicks}" >Clicks</td>
+ 			</tr>
+ 			<tr>
+	 			<th class="thRes"><img src="/img/compartilhamento.png"></th>
+	 			<td th:text="${campanha.CalcShare}" >Compartilhamentos</td>
+ 			</tr>
+ 		</table>
+ 
+ </section>
+    
+    </main>
+</body>
+</html>

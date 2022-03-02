@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campanhas</title>
+
+<link rel="stylesheet" type="text/css" href="estiloCampanha.css">
+
+<!--load all Font Awesome styles -->
+<link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+<!-- Add icon library -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+	<h1 class="head">
+		Lista de Campanhas
+		<a href="http://localhost:8080">
+			<button id="btCadastrarNovo" value="bt">
+				Cadastrar&nbsp;&nbsp;<i class="fa-solid fa-circle-plus"></i>
+			</button>
+		</a>
+	</h1>
+
+	<section class="tabela">
+		<table th:each="campanha: ${campanhas}">
+			<tr>
+				<th class="thLabel">Código</th>
+				<td th:text="${campanha.id}" class="ListRel">-</td>
+				<td rowspan="2" class="thRes"><img src="/img/cifrao.png"></td>
+				<td rowspan="2" th:text="${campanha.ValorTotal}" class="ListRes">-</td>
+			</tr>
+			<tr>
+				<th class="thLabel">Anuncio</th>
+				<td th:text="${campanha.anuncio}" class="ListRel"></td>
+
+			</tr>
+
+
+			<tr>
+				<th class="thLabel">Cliente</th>
+				<td th:text="${campanha.nome}" class="ListRel"></td>
+				<td class="thRes" rowspan="2"><img src="/img/visualizacao.png"></td>
+				<td rowspan="2" th:text="${campanha.Calcviewstotal}" class="ListRes"></td>
+			</tr>
+			<tr>
+				<th class="thLabel">Início</th>
+				<td th:text="${campanha.dataini}" class="ListRel"></td>
+			</tr>
+			<tr>
+				<th class="thLabel">Fim</th>
+				<td th:text="${campanha.datafim}" class="ListRel"></td>
+
+				<td class="thRes" rowspan="2"><img src="/img/clique.png"></td>
+				<td rowspan="2" th:text="${campanha.CalcClicks}" class="ListRes"></td>
+			</tr>
+			<tr>
+				<th class="thLabel">Dias</th>
+				<td th:text="${campanha.CalcDias}" class="ListRel"></td>
+
+			</tr>
+			<tr>
+				<th class="thLabel">Valor Diário</th>
+				<td th:text="${campanha.investimento}" class="ListRel"></td>
+
+				<td class="thRes" rowspan="2"><img
+					src="/img/compartilhamento.png"></td>
+				<td rowspan="2" th:text="${campanha.CalcShare}" class="ListRes"></td>
+			</tr>
+			<tr>
+				<th class="thLabel">Valor Total</th>
+				<td th:text="${campanha.ValorTotal}" class="ListRel">vlT</td>
+			</tr>
+		</table>
+
+
+
+	</section>
+
+</body>
+</html>

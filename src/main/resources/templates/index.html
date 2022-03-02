@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Campanha</title>
+    
+    <link rel="stylesheet" type="text/css" href="estiloIndex.css">
+    
+	<!--load all Font Awesome styles -->
+	<link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+	<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <h1>Calculo de Alcance de Campanha de Divulgação</h1>
+    
+    <main>
+    	<div class="form">
+    	<form th:action="@{salvar}" method="POST" >
+	    	<input type="text" name="anuncio" placeholder="Nome do Anuncio">
+	    	<input type="text" name="nome" placeholder="Nome do Cliente">
+	    	<input type="date" name="dataini">
+	    	<input type="date" name="datafim">
+	    	<input type="text" name="investimento" placeholder="Investimento diário">
+	    	<input id="btCalcular" type="submit" value="Salvar"/>	    	
+    	</form>
+    	
+	    	<a href="http://localhost:8080/campanhas">
+	    	<button id="btCampanhas" value="bt">
+	    		<i class="fa-solid fa-list"></i>
+	    		Campanhas
+	    	</button>
+	    	</a>
+		</div>
+		
+		<div class="imagem">
+			<img id="imgmobile" alt="campanha" src="/img/mobile-marketing.png">
+		</div>
+	    
+       	
+    </main>
+</body>
+</html>

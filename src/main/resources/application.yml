@@ -1,0 +1,22 @@
+spring:
+
+ datasource:
+   #url: jdbc:h2:mem:testdb
+   url: jdbc:h2:file:./bdcampanhas
+   username: root
+   password: 
+   driverClassName: org.h2.Driver
+
+  
+ jpa:
+  database-plataform: org.hibernate.dialect.H2Dialect
+  properties.hibernate.show_sql: true
+  properties.hibernate.format_sql: true
+  defer-datasource-initialization: true
+  hibernate.ddl-auto: update
+  
+
+ h2:
+  console:
+   enabled: true
+   path: /h2
